@@ -1,0 +1,197 @@
+/* =============================
+   DASHBOARD WRAPPER
+============================= */
+
+.dashboard-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.dashboard-container {
+  background: white;
+  width: 95%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* =============================
+   HEADER
+============================= */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: #e74a3b;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+/* =============================
+   SUMMARY SECTION
+============================= */
+
+.summary-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  flex: 1;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  color: white;
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.summary-card h4 {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.summary-card p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* =============================
+   FORM
+============================= */
+
+.expense-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.expense-form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.expense-form input:focus {
+  outline: none;
+  border: 1px solid #4e73df;
+  box-shadow: 0 0 6px rgba(78, 115, 223, 0.4);
+}
+
+.expense-form button {
+  background: #4e73df;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.expense-form button:hover {
+  background: #2e59d9;
+}
+
+/* =============================
+   FILTER DROPDOWN
+============================= */
+
+.filter-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.filter-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border: 1px solid #4e73df;
+  box-shadow: 0 0 6px rgba(78, 115, 223, 0.4);
+}
+
+/* =============================
+   TABLE
+============================= */
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expense-table th {
+  background: #4e73df;
+  color: white;
+  padding: 12px;
+}
+
+.expense-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.edit-btn {
+  background: #f6c23e;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background: #dda20a;
+}
+
+.delete-btn {
+  background: #e74a3b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}

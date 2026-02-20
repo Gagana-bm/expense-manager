@@ -8,7 +8,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors({origin:"*",credentials:true,}));
+app.use(cors({origin:"https://expense-manager-1-2lcy.onrender.com",credentials:true,}));
 
 /* ==============================
    MongoDB Connection

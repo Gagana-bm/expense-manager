@@ -1,34 +1,57 @@
-# Expense Manager MERN Project
 # 💰 Expense Manager (MERN Stack)
 
-A full-stack Expense Tracking Web Application built using the MERN stack.
+A full-stack Expense Tracking Web Application built using the MERN stack.  
+This application allows users to register, login securely, and manage their daily expenses.
+
+---
+
+## 🌐 Live Demo
+👉 [Click here to use the app](https://expense-manager-1-21cy.onrender.com)
+
+---
 
 ## 🚀 Tech Stack
 
-- MongoDB Atlas
-- Express.js
+### 🔹 Frontend
 - React.js
-- Node.js
-- JWT Authentication
+- Axios
+- CSS
 - Chart.js
-- Deployed on Render
 
-## 🔐 Features
-
-- User Registration & Login
+### 🔹 Backend
+- Node.js
+- Express.js
 - JWT Authentication
-- Protected Routes
-- Add / Edit / Delete Expenses
-- Category Filtering
-- Monthly Summary Analytics
-- Pie & Bar Charts
-- Fully Deployed Backend & Frontend
+- bcrypt.js
 
-## 🌍 Live Links
+### 🔹 Database
+- MongoDB Atlas
 
-Frontend: https://your-frontend-url
-Backend: https://your-backend-url
+### 🔹 Deployment
+- Render (Frontend & Backend)
 
-## 📦 Installation (Local Setup)
+---
 
-Clone the repo:
+## ✨ Features
+
+- ✅ User Registration
+- ✅ Secure Login with JWT
+- ✅ Password Hashing using bcrypt
+- ✅ Add Expenses
+- ✅ View Expenses
+- ✅ Protected Routes
+- ✅ RESTful API
+- ✅ Full Deployment on Cloud
+
+---
+
+## 🔐 Authentication Flow
+
+1. User registers with email and password
+2. Password is securely hashed using bcrypt
+3. On login, JWT token is generated
+4. Token is used to access protected routes
+
+---
+
+## 📂 Project Structure

@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/expenses`, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/Register`, {
         name,
         email,
         password

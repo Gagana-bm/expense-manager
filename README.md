@@ -6,8 +6,7 @@ This application allows users to register, login securely, and manage their dail
 ---
 
 ## 🌐 Live Demo
-👉 [Click here to use the app](https://expense-manager-1-21cy.onrender.com)
-
+👉 [Click here to use the app](https://expense-manager-1-2lcy.onrender.com)
 ---
 
 ## 🚀 Tech Stack

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Dashboard.css";
@@ -25,12 +25,12 @@ function Dashboard() {
   const [category, setCategory] = useState("");
   const [editingId, setEditingId] = useState(null);
   const [filterCategory, setFilterCategory] = useState("All");
-  const [error, setError] = useState("");        // ✅ Added: error state
-  const [loading, setLoading] = useState(false); // ✅ Added: loading state
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const API = process.env.REACT_APP_API_URL || "http://localhost:5000"; // ✅ Fix 1: fallback URL
+  const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
-  const fetchExpenses = async () => {
+  const fetchExpenses = useCallback(async () => {
     try {
       const res = await axios.get(`${API}/api/expenses`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -38,14 +38,17 @@ function Dashboard() {
       setExpenses(res.data.expenses);
     } catch (error) {
       console.log(error);
-      setError("Failed to fetch expenses");  // ✅ visible error
+      setError("Failed to fetch expenses");
     }
-  };
+  }, [token, API]);
 
   useEffect(() => {
-    if (!token) navigate("/");
-    else fetchExpenses();
-  }, []);
+    if (!token) {
+      navigate("/");
+    } else {
+      fetchExpenses();
+    }
+  }, [token, navigate, fetchExpenses]);
 
   // Filter Logic
   const filteredExpenses =
@@ -107,7 +110,7 @@ function Dashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    setLoading(true); // ✅ Fix 2: show loading
+    setLoading(true);
 
     try {
       if (editingId) {
@@ -132,7 +135,7 @@ function Dashboard() {
 
     } catch (error) {
       console.log(error);
-      setError(error.response?.data?.message || "Failed to save expense"); // ✅ Fix 3: visible error
+      setError(error.response?.data?.message || "Failed to save expense");
     } finally {
       setLoading(false);
     }
@@ -148,7 +151,7 @@ function Dashboard() {
       fetchExpenses();
     } catch (error) {
       console.log(error);
-      setError("Failed to delete expense"); // ✅ visible error
+      setError("Failed to delete expense");
     }
   };
 
@@ -174,7 +177,7 @@ function Dashboard() {
           <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </div>
 
-        {error && <p className="error-msg">{error}</p>} {/* ✅ Fix 4: show errors */}
+        {error && <p className="error-msg">{error}</p>}
 
         {/* Summary */}
         <div className="summary-section">
@@ -191,7 +194,7 @@ function Dashboard() {
         {/* Charts */}
         <div style={{ display: "flex", gap: "40px", marginBottom: "30px" }}>
           <div style={{ width: "40%" }}>
-            {Object.keys(categoryTotals).length > 0 && <Pie data={pieData} />} {/* ✅ Fix 5: guard empty chart */}
+            {Object.keys(categoryTotals).length > 0 && <Pie data={pieData} />}
           </div>
           <div style={{ width: "60%" }}>
             <Bar data={barData} options={{ responsive: true, plugins: { legend: { display: false } } }} />
@@ -229,7 +232,7 @@ function Dashboard() {
             <option value="Other">Other</option>
           </select>
           <button type="submit" disabled={loading}>
-            {loading ? "Saving..." : editingId ? "Update" : "Add"} {/* ✅ loading state */}
+            {loading ? "Saving..." : editingId ? "Update" : "Add"}
           </button>
         </form>
 
@@ -281,7 +284,6 @@ function Dashboard() {
             )}
           </tbody>
         </table>
-        {/* ✅ Fix 6: removed stray <table>...</table> that was here */}
 
         <div style={{ marginTop: "40px", textAlign: "center", opacity: 0.7 }}>
           © 2026 Expense Manager | Built with MERN Stack

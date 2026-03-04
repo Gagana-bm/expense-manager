@@ -1,0 +1,115 @@
+/* =============================
+   FULL PAGE BACKGROUND
+============================= */
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =============================
+   REGISTER CARD
+============================= */
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  padding: 45px;
+  width: 400px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: white;
+  animation: slideUp 0.6s ease;
+}
+
+/* =============================
+   TITLE
+============================= */
+
+.auth-card h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* =============================
+   INPUT FIELDS
+============================= */
+
+.auth-card input {
+  width: 100%;
+  padding: 13px 15px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.auth-card input:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transform: scale(1.02);
+}
+
+/* =============================
+   REGISTER BUTTON
+============================= */
+
+.auth-card button {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: #ff4e75;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.auth-card button:hover {
+  background: #f8f8f8;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================
+   LOGIN LINK TEXT
+============================= */
+
+.auth-card p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.auth-card span {
+  color: #ffe066;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-card span:hover {
+  text-decoration: underline;
+}
+
+/* =============================
+   ANIMATION
+============================= */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,112 @@
+/* =============================
+   FULL SCREEN BACKGROUND
+============================= */
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =============================
+   CARD DESIGN
+============================= */
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* =============================
+   TITLE
+============================= */
+
+.auth-card h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* =============================
+   INPUT FIELDS
+============================= */
+
+.auth-card input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.auth-card input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* =============================
+   BUTTON
+============================= */
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: white;
+  color: #764ba2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  background: #f3f3f3;
+  transform: translateY(-2px);
+}
+
+/* =============================
+   REGISTER / LOGIN LINK
+============================= */
+
+.auth-card p {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.auth-card span {
+  color: #ffd369;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-card span:hover {
+  text-decoration: underline;
+}
+
+/* =============================
+   ANIMATION
+============================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
